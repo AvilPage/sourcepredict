@@ -293,12 +293,12 @@ class sourcemap():
             my_embed = embed.fit(self.wu)
         elif method == 'TSNE':
             embed = TSNE(metric='precomputed',
-                         n_components=n_comp, random_state=seed)
-            my_embed = embed.fit(np.matrix(self.wu))
+                         n_components=n_comp, random_state=seed, init='random')
+            my_embed = embed.fit(self.wu)
         elif method == 'MDS':
             embed = MDS(metric=True,n_components=n_comp, 
                     random_state=seed, n_jobs=threads, n_init=6, dissimilarity = 'precomputed')
-            my_embed = embed.fit(np.matrix(self.wu))
+            my_embed = embed.fit(self.wu)
 
         self.my_embed = pd.DataFrame(
             my_embed.embedding_, columns=cols, index=self.wu.index)

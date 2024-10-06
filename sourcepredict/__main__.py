@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 
 import argparse
-from . sourcepredictlib import ml
-from . sourcepredictlib import utils
+import sys
+
+from sourcepredictlib import ml
+from sourcepredictlib import utils
 import os
 import pandas as pd
 import numpy as np
 import warnings
-from . import __version__
-
+__version__ = '0.5'
 
 def _get_args():
     '''This function parses and return arguments passed in'''
