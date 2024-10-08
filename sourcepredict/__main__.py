@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 
 import argparse
-import sys
 
-from sourcepredictlib import ml
-from sourcepredictlib import utils
+from sourcepredict.sourcepredictlib import ml
+from sourcepredict.sourcepredictlib import utils
 import os
 import pandas as pd
 import numpy as np
