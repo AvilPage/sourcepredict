@@ -121,7 +121,7 @@ class sourceunknown():
         except KeyError:
             print(f"ERROR: Test sample present in training dataset")
             sys.exit(1)
-        self.y_unk = self.y_unk.append(self.ref_u_labs)
+        self.y_unk = self.y_unk._append(self.ref_u_labs)
 
     def compute_distance(self):
         """Sample pairwise distance computation
@@ -306,7 +306,7 @@ class sourcemap():
         if out_csv:
             to_write = self.my_embed.copy(deep=True)
             y = self.labels.copy(deep=True)
-            y = y.append(
+            y = y._append(
                 pd.Series(data=['sink']*len(list(self.test.columns)), index=self.test.columns, name='labels'))
             to_write = to_write.merge(y, left_index=True, right_index=True)
             to_write['name'] = to_write.index
